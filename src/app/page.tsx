@@ -1,23 +1,25 @@
 import Image from "next/image";
-import { paystack_logo } from "../../public";
+import { paystack_logo, screen_full, screen_md, screen_sm } from "../../public";
 import AIModal from "@/components/AIModal";
 
 export default function Home() {
   return (
-    <main>
-      <header className="p-5">
-        <div className="flex flex-row items-center gap-2">
-          <Image
-            src={paystack_logo}
-            alt="logo"
-            className="w-7 h-auto"
-            width={100}
-            height={100}
-          />
-          <p className="text-xl font-semibold">docs</p>
-        </div>
-      </header>
-
+    <main className=" w-full h-screen font-sans">
+      <Image
+        src={screen_full}
+        alt="bg"
+        className="w-full h-full hidden lg:flex"
+      />
+      <Image
+        src={screen_md}
+        alt="bg"
+        className="w-full h-full hidden sm:flex lg:hidden"
+      />
+      <Image
+        src={screen_sm}
+        alt="bg"
+        className="w-full h-full flex sm:hidden"
+      />
       <AIModal />
     </main>
   );

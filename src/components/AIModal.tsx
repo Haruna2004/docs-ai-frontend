@@ -1,5 +1,5 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React from "react";
 import {
   Modal,
@@ -7,9 +7,18 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Button,
   useDisclosure,
 } from "@nextui-org/react";
+import Image from "next/image";
+import { paystack_logo } from "../../public";
+import Link from "next/link";
+import { RefreshCcw } from "lucide-react";
+import Input from "./Input";
+import Answer from "./Answer";
+import ActionButtons from "./ActionButtons";
+import Sources from "./Sources";
+import Header from "./Header";
+import { ExampleQuestions } from "./Others";
 
 type Props = object;
 
@@ -17,39 +26,29 @@ export default function AIModal({}: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div>
-      <Modal size="4xl" isOpen={true} onClose={onClose}>
+      <Modal
+        size="4xl"
+        isOpen={true}
+        onClose={onClose}
+        backdrop="opaque"
+        scrollBehavior="inside"
+        // placement="top-center"
+      >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Modal Title
+              <ModalHeader className="flex items-center gap-1 bg-gray-100">
+                <Header />
               </ModalHeader>
-              <ModalBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod.
-                </p>
+
+              <ModalBody className="flex flex-col gap-3 text-sm relative pt-0">
+                <Input />
+                <ExampleQuestions />
+                <Answer />
+                <ActionButtons />
+                <Sources />
               </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter>
+              <ModalFooter></ModalFooter>
             </>
           )}
         </ModalContent>
