@@ -1,25 +1,10 @@
-import Image from "next/image";
-import { paystack_logo, screen_full, screen_md, screen_sm } from "../../public";
 import AIModal from "@/components/AIModal";
+import { DemoBg } from "@/components/DemoBg";
 
 export default function Home() {
   return (
     <main className=" w-full h-screen font-sans">
-      <Image
-        src={screen_full}
-        alt="bg"
-        className="w-full h-full hidden lg:flex"
-      />
-      <Image
-        src={screen_md}
-        alt="bg"
-        className="w-full h-full hidden sm:flex lg:hidden"
-      />
-      <Image
-        src={screen_sm}
-        alt="bg"
-        className="w-full h-full flex sm:hidden"
-      />
+      <DemoBg />
       <AIModal />
     </main>
   );

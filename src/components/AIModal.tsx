@@ -9,10 +9,6 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@nextui-org/react";
-import Image from "next/image";
-import { paystack_logo } from "../../public";
-import Link from "next/link";
-import { RefreshCcw } from "lucide-react";
 import Input from "./Input";
 import Answer from "./Answer";
 import ActionButtons from "./ActionButtons";
@@ -24,6 +20,7 @@ type Props = object;
 
 export default function AIModal({}: Props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div>
       <Modal

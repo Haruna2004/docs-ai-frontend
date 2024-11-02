@@ -1,9 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import clsx from "clsx";
+import { useResData } from "@/libs/store";
 
 export default function Sources() {
+  const { success } = useResData();
   return (
-    <div className="space-y-3">
+    <div className={clsx("space-y-3", !success && "hidden")}>
       <p className="text-sm">Summarized from these pages</p>
       <div className="flex flex-wrap gap-3">
         {[0, 1, 2, 3, 4].map((index) => (
