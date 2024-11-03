@@ -38,7 +38,7 @@ export default function AIModal({}: Props) {
                 <Header />
               </ModalHeader>
 
-              <ModalBody className="flex flex-col gap-3 text-sm relative pt-0">
+              <ModalBody className="flex flex-col gap-3 text-sm relative pt-0 font-sans">
                 <Input />
                 <ExampleQuestions />
                 <Answer />

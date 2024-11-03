@@ -14,8 +14,9 @@ export default function ActionButtons() {
           iconName="refresh"
           text="Clear"
           action={() => resetResData()}
+          keepText
         />
-        <ActionButton iconName="copy" text="Copy" />
+        <ActionButton iconName="copy" text="Copy" keepText />
       </div>
       {/* feedback */}
       <div className="flex gap-3">
@@ -30,9 +31,11 @@ export function ActionButton({
   text,
   iconName,
   action,
+  keepText,
 }: {
   text: string;
   iconName: string;
+  keepText?: boolean;
   action?: () => void;
 }) {
   return (
@@ -41,14 +44,14 @@ export function ActionButton({
       onClick={action}
     >
       <GetIcon name={iconName} />
-      <p>{text}</p>
+      <p className={clsx("flex sm:flex", !keepText && "hidden")}>{text}</p>
     </div>
   );
 }
 
 function GetIcon({ name }: { name: string }) {
-  if (name === "refresh") return <RefreshCcw className="w-3" />;
-  if (name === "dislike") return <ThumbsDown className="w-3" />;
-  if (name === "like") return <ThumbsUp className="w-3" />;
-  if (name === "copy") return <Clipboard className="w-3" />;
+  if (name === "refresh") return <RefreshCcw className="sm:w-3 w-4" />;
+  if (name === "dislike") return <ThumbsDown className="sm:w-3 w-4" />;
+  if (name === "like") return <ThumbsUp className="sm:w-3 w-4" />;
+  if (name === "copy") return <Clipboard className="sm:w-3 w-4" />;
 }

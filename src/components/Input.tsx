@@ -33,7 +33,7 @@ function Input() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full justify-between items-center sticky top-0 font-sans"
+      className="flex w-full justify-between items-center bg-white sticky top-0 font-sans "
     >
       <input
         placeholder="Ask me a question"
