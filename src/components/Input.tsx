@@ -1,5 +1,6 @@
 import { getAiResponse } from "@/libs/queries";
 import { useInput, useResData } from "@/libs/store";
+import { CornerDownLeft } from "lucide-react";
 import React from "react";
 
 function Input() {
@@ -10,13 +11,14 @@ function Input() {
     e.preventDefault();
     if (inputValue.trim() === "" || processing) return;
     setProgress(true);
-    setInputValue("");
     const tempInput = inputValue;
     const { success, resData } = await getAiResponse(inputValue);
+    setInputValue("");
     setProgress(false);
 
     if (!success) {
       setInputValue(tempInput);
+      return;
     }
 
     setSuccess(success);
@@ -31,14 +33,18 @@ function Input() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full justify-between items-center sticky top-0"
+      className="flex w-full justify-between items-center sticky top-0 font-sans"
     >
       <input
         placeholder="Ask me a question"
         className="w-full outline-none py-3  text-base flex-1"
+        autoFocus={true}
+        value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button className="hidden" type="submit"></button>
+      <button className="bg-transparent" type="submit">
+        <CornerDownLeft className="text-black/70" />
+      </button>
     </form>
   );
 }

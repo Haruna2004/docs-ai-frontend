@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
       <Image src={paystack_logo} alt="" className="h-5 w-auto" />
-      <p className="text-base text-black/70">Paystack Docs Assistant</p>
+      <p className="text-base font-sans text-black/70">AI Assistant</p>
     </>
   );
 }

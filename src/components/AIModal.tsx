@@ -34,7 +34,7 @@ export default function AIModal({}: Props) {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex items-center gap-1 bg-gray-100">
+              <ModalHeader className="flex items-center gap-2 bg-gray-50">
                 <Header />
               </ModalHeader>
 

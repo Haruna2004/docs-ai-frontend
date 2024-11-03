@@ -1,22 +1,31 @@
 import { useInput, useResData } from "@/libs/store";
 import { clsx } from "clsx";
+import { MessageCircle } from "lucide-react";
 
 export function ExampleQuestions() {
-  const { success } = useResData();
-  const { inputValue } = useInput();
+  const { success, processing } = useResData();
+  const { setInputValue } = useInput();
   return (
-    <div className={clsx("space-y-3", success && "hidden")}>
-      <p className="uppercase text-xs font-semibold text-black/50">
-        Example Questions
+    <div className={clsx("space-y-3", (success || processing) && "hidden")}>
+      <p className="text-xs font-semibold font-sans text-black/70">
+        Example questions
       </p>
-      <div className="flex w-full justify-center gap-5 flex-wrap">
-        {[0, 1].map((index) => (
-          <p
-            className="border rounded-sm px-3 py-1 border-blue-600 cursor-pointer flex-1 text-center"
-            key={index}
+
+      <div className="flex flex-col gap-2">
+        {[
+          "How to setup payment in react?",
+          "Apple pay integration for recurring billing",
+        ].map((text) => (
+          <div
+            key={text}
+            className="cursor-pointer flex items-center gap-2 text-sky-700"
+            onClick={() => setInputValue(text)}
           >
-            How do I install the IOS SDK
-          </p>
+            <MessageCircle className="w-4" />
+            <p className="text-base " key={text}>
+              {text}
+            </p>
+          </div>
         ))}
       </div>
     </div>
