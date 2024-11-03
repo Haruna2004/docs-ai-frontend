@@ -22,3 +22,8 @@ export type ResDataType = ResData & {
   getResData: () => ResData;
   resetResData: () => void;
 };
+
+export type Source = {
+  source_link: string;
+  relevance: number;
+};

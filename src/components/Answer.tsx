@@ -8,12 +8,11 @@ export default function Answer() {
 
   return (
     <>
-      <h3 className={clsx("font-medium text-xl", !success && "hidden")}>
+      <h3 className={clsx("font-semibold text-xl", !success && "hidden")}>
         {question}
       </h3>
       {/* answer */}
-      <div className={clsx("space-y-2", !success && "hidden")}>
-        <h3 className="font-medium text-xl">Answer</h3>
+      <div className={clsx("space-y-2 text-base", !success && "hidden")}>
         <Markdown markdownText={content} />
       </div>
     </>

@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = process.env.NEXT_PUBLIC_PYSERVER_URL as string;
 const URL_PATH = "query_docs_ai?query_text";
 
 export async function getAiResponse(userQuery: string) {
