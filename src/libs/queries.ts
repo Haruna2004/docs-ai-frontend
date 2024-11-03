@@ -9,17 +9,9 @@ export async function getAiResponse(userQuery: string) {
     const data = await response.json();
     const { success, message, data: resData } = data;
 
-    if (success !== true) {
-      // handle problem
-      return {
-        success: false,
-        message,
-        resData,
-      };
-    }
     // Request is successfull
     return {
-      success,
+      success: true,
       message,
       resData,
     };
