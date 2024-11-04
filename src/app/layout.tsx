@@ -10,8 +10,8 @@ const poppinsFont = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Paystack Doc AI",
-  description: "Ask Paystack documentation question",
+  title: "Flutterwave Doc AI",
+  description: "Ask Flutterwave documentation question",
 };
 
 export default function RootLayout({

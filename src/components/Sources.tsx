@@ -24,10 +24,10 @@ export default function Sources() {
             href={source_link}
             target="_blank"
             key={source_link}
-            className="flex border  rounded-2xl p-1 px-4 gap-2 items-center bg-gray-50 hover:bg-gray-100 shadow-sm hover:border-sky-500 transition-colors duration-200 font-medium"
+            className="flex border  rounded-2xl p-1 px-4 gap-2 items-center bg-gray-50 hover:bg-gray-100 shadow-sm hover:border-amber-500 transition-colors duration-200 font-medium"
           >
-            <p className=" text-xs text-sky-500">{index + 1}</p>
-            <p className="text-sky-600">{getTitle(source_link)}</p>
+            <p className=" text-xs text-amber-500">{index + 1}</p>
+            <p className="text-amber-600">{getTitle(source_link)}</p>
           </Link>
         ))}
       </div>
