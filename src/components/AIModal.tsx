@@ -14,7 +14,7 @@ import Answer from "./Answer";
 import ActionButtons from "./ActionButtons";
 import Sources from "./Sources";
 import Header from "./Header";
-import { ExampleQuestions } from "./Others";
+import { ExampleQuestions } from "./Examples";
 
 type Props = object;
 
