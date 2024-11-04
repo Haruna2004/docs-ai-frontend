@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { paystack_logo } from "../../public";
+import { flutterwave_logo } from "../../public";
 
 function Header() {
   return (
     <>
-      <Image src={paystack_logo} alt="" className="h-5 w-auto" />
+      <Image src={flutterwave_logo} alt="" className="h-7 w-auto" />
       <p className="text-base font-sans text-black/70">AI Assistant</p>
     </>
   );

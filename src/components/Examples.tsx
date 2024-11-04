@@ -1,7 +1,7 @@
 import { useInput, useResData } from "@/libs/store";
 import { clsx } from "clsx";
 import { MessageCircle } from "lucide-react";
-import { DotLoader, RingLoader } from "react-spinners";
+import { DotLoader } from "react-spinners";
 
 export function ExampleQuestions() {
   const { success, processing } = useResData();
@@ -29,7 +29,7 @@ export function ExampleQuestions() {
         ].map((text) => (
           <div
             key={text}
-            className="cursor-pointer flex items-center gap-2 text-sky-700"
+            className="cursor-pointer flex items-center gap-2 text-amber-600/90"
             onClick={() => setInputValue(text)}
           >
             <MessageCircle className="w-4" />
