@@ -25,7 +25,7 @@ export function ExampleQuestions() {
       <div className="flex flex-col gap-2">
         {[
           "How to setup payment in react?",
-          "Apple pay integration on mobile",
+          "Flutterwave transcation verification on mobile",
         ].map((text) => (
           <div
             key={text}
